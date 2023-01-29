@@ -1,0 +1,15 @@
+class computer:
+    def __del__(self):
+        print("end of program")
+    
+    def __init__(self):
+        self.name="riya"
+        print(self.name)   
+        
+def o():
+    a=computer()
+o()
+
+ output
+ riya
+end of program
