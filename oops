@@ -1,0 +1,37 @@
+#a gives 1 position argument
+class computer:
+    def config():   #0 argu
+        print("i5,gh")
+        
+a=computer()   #0
+a.config()    #1
+
+output
+ERROR
+Traceback (most recent call last):
+  File "D:\Users\DELL\Downloads\1.py", line 7, in <module>
+    a.config()    #1
+TypeError: computer.config() takes 0 positional arguments but 1 was given
+///////////////////////////////////////////////////////////////////////////////////
+#a gives 1 position argument
+class computer:
+    def config(self):   #0 argu
+        print("i5,gh")
+        
+a=computer()   #0
+a.config()    #1
+
+output
+i5,gh
+   /////////////////////////////////////////////////////////////////////
+#a gives 1 position argument
+class computer:
+    def config():   #0 argu
+        print("i5,gh")
+        
+a=computer.config()   #0
+
+output
+i5,gh
+     
+     
