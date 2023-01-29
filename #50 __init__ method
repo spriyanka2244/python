@@ -1,0 +1,90 @@
+WITHOUT USEING __INIT__ METHOD WE CAN'T ABLE TO GIVE ARGUMENTS TO COMPUTER
+
+class Computer:
+    
+    def config(self,name):
+        self.name=name
+        print(self.name)
+             
+com1=Computer("ram") 
+
+Computer.config(com1)
+
+>>> %Run 1.py
+Traceback (most recent call last):
+  File "D:\Users\DELL\Downloads\1.py", line 30, in <module>
+    com1=Computer("ram")
+TypeError: Computer() takes no arguments
+>>> 
+/////////////////////////////////////////////////////////////////////////////////
+INIT will call automatically
+class Computer:
+    
+    def __init__(self):
+        print("init")   
+    
+    def config(self):
+        print("I love india")
+             
+com1=Computer() 
+com1.config()
+
+>>> %Run 1.py
+init
+I love india
+>>> 
+/////////////////////////////////////////////////////
+refering the cpu to object
+
+class Computer:
+    
+    def __init__(self,cpu,ram):
+        self.cpu=cpu
+        self.ram=ram
+          
+    
+    def config(self):
+        print(self.cpu,self.ram)
+             
+com1=Computer("i5",16)#passing com1,i5,16 to self cpu ram
+com2=Computer("Ryzen 3",8)#passing com2 ryzen 3 8 to self  cpu ram
+
+com1.config() #the value passed in init printing
+com2.config() #the value passed in init printing
+
+>>> %Run 1.py
+i5 16
+Ryzen 3 8
+>>> 
+//////////////////////////////////////////////////////////////////////////////////
+cpu is not a local variable so its gives an error
+to refer cpu to object self.cpu
+
+class Computer:
+    
+    def __init__(self,cpu,ram):
+        self.cpu=cpu
+        self.ram=ram
+          
+    
+    def config(self):
+        print("config of ",cpu,ram)
+             
+com1=Computer("i5",16)#passing com1,i5,16 to self cpu ram
+com2=Computer("Ryzen 3",8)#passing com2 ryzen 3 8 to self  cpu ram
+
+com1.config() #the value passed in init printing
+com2.config() #the value passed in init printing
+
+>>> %Run 1.py
+Traceback (most recent call last):
+  File "D:\Users\DELL\Downloads\1.py", line 37, in <module>
+    com1.config() #the value passed in init printing
+  File "D:\Users\DELL\Downloads\1.py", line 32, in config
+    print("config of ",cpu,ram)
+NameError: name 'cpu' is not defined
+>>> 
+
+        
+
+        
