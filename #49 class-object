@@ -1,0 +1,118 @@
+Design = class is blue print of object or in which the object is created eg class furniture which does not exit in real world
+instance = oject is a real world entity which has attributes and behaviour eg object is chair which exit in real world
+where attributes is outerself like dark skin,height,weight or what I know something
+      behaviour is inner self or action or what I do something
+      
+ function in oops called methods
+ ///////////////////////////////////////////////////////////////////////////////////
+ class Computer:
+    
+    def config(self):
+        print("i5,16gb,1TB")
+        
+a='8' #its type be str or num or float       
+print(type(a)) # its in built class
+
+#same for below also to identify com1 is object of class
+com1=Computer() 
+print(type(com1)) #these user defined class
+    
+output:
+>>> %Run 1.py
+<class 'str'>
+<class '__main__.Computer'>
+>>> 
+ ////////////////////////////////////////////////////////////////////////////
+ if we just call a config you will get error because its defined inside an class 
+ so u should call {class with method name}
+ 
+ class Computer:
+    
+    def config(self):
+        print("i5,16gb,1TB")
+        
+com1=Computer() 
+config()
+
+>>> %Run 1.py
+Traceback (most recent call last):
+  File "D:\Users\DELL\Downloads\1.py", line 32, in <module>
+    config()
+NameError: name 'config' is not defined
+>>> 
+///////////////////////////////////////////////////////////////
+class Computer:
+    
+    def config(self):
+        print("i5,16gb,1TB")
+        
+    def saf():
+        print("rock it baby")
+             
+com1=Computer() 
+com1.config()
+Computer.saf()
+
+>>> %Run 1.py
+i5,16gb,1TB
+rock it baby
+>>> 
+/////////////////////////////////////////
+for which object your are calling to perform 
+class name=======method name=========object name   
+
+class Computer:
+    
+    def config(self):
+        print("i5,16gb,1TB")
+        
+    def saf():
+        print("rock it baby")
+             
+com1=Computer() 
+
+Computer.config()
+
+>>> %Run 1.py
+Traceback (most recent call last):
+  File "D:\Users\DELL\Downloads\1.py", line 34, in <module>
+    Computer.config()
+TypeError: Computer.config() missing 1 required positional argument: 'self'
+>>> 
+////////////////////////////////////////////////////////
+class Computer:
+    
+    def config(self):
+        print("i5,16gb,1TB")
+        
+             
+com1=Computer() 
+
+Computer.config(com1) # parameter com1 pass to self
+>>> %Run 1.py
+i5,16gb,1TB
+>>> 
+////////////////////////////////////////////
+class Computer:
+    
+    def config(self):
+        print("i5,16gb,1TB")
+             
+com1=Computer() 
+com2=Computer()
+
+Computer.config(com1)
+Computer.config(com2)
+
+com1.config()# config will take com1 AS Parameter to self in method config
+com2.config()
+
+>>> %Run 1.py
+i5,16gb,1TB
+i5,16gb,1TB
+i5,16gb,1TB
+i5,16gb,1TB
+>>> 
+        
+
+      
