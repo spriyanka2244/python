@@ -1,0 +1,55 @@
+object will take some space in heap memory
+EVERY time you create an object it is allocated to new space
+class computer:
+    pass
+    
+
+c1=computer()    
+c2=computer()
+
+print(id(c1))
+print(id(c2))
+>>> %Run 1.py
+2701709474400
+2701709474352
+>>> 
+//////////////////////////////////////////////////////////////////
+
+Size of an object?
+>>>>depends on the no. variables and size of each variable
+    computer inside __init__ variable
+
+
+
+who allocates size to object?
+>>>constructor it will call internaly when class: and object=class() is defined
+class computer:
+    print("construtor called internaly")
+
+c1=computer()    
+
+>>> %Run 1.py
+construtor called internaly
+>>> 
+
+how to define variables and the value of variables
+class computer:
+    
+    def __init__(self):
+        self.name="lofer"
+        self.age=34
+
+c1=computer()    
+c2=computer()
+
+c2.name="change the value"
+print(c1.name)
+print(c2.name)
+
+>>> %Run 1.py
+lofer
+change the value
+>>> 
+ 
+ 
+ 
