@@ -1,0 +1,31 @@
+why do need self
+To define current object of those method
+
+c1 who is calling c2 is whom to compare
+c1 is self and c2 is other
+
+class computer:
+    def __init__(self):
+        self.name="ram"
+        self.age=23
+           
+    def compare(self,other): #the method of compare
+        other.name="raim" #self is c1,c1 is calling and c2 is compare
+        if self.name==other.name:
+            return True
+        else:
+            return False
+        
+c1=computer()
+c2=computer()
+
+if c1.compare(c2): #compare is not a in built function so define method
+    print("same of {0} ",format(c1.name))
+else:
+    print("different of {1} ",format(c2.name))
+
+
+
+>>> %Run 1.py
+different of {1}  raim
+>>> 
