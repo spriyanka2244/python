@@ -1,0 +1,23 @@
+two types of variable
+variable instance =the value of variable changes from object to object
+static variable =The value of variable does't change from object to object
+
+class computer:
+    ham=89   #static the change of  variable effect the variable 
+    
+    def __init__(self):
+        self.name="ham"  #instance namespace 
+        self.age=90      #namespace is an area where you create and store variable
+   
+    def updat(self):
+        self.name="gorgy"
+        
+c1=computer()
+c2=computer()
+c1.updat()
+
+computer.ham=87
+
+print(c1.name,c2.name)
+print(c1.age,c2.age)
+print(c1.ham,c2.ham)
