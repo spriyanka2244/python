@@ -1,0 +1,14 @@
+poly many
+morph form
+ism 
+
+polymorphism used in Loose coupling 
+                     Dependency Injection
+                     interface
+                     
+
+4 ways to implement polymorphism
+  Duck Typing
+  operator overloading
+  method overloading
+  method overriding
