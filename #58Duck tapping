@@ -1,0 +1,35 @@
+x=5 # x is typr of integer
+x="ram" #x is a type of string
+
+#if there is object "ide" we are considerd only about method of "execute" not which class is belong to 
+
+class pycharm:
+    
+    def execute(self):
+        print("compiling")
+        print("running")  
+
+class MyEditor:
+    
+    def execute(self):
+        print("hello")
+        print("world")
+
+class Laptop:
+    
+    def code(self,ide,n): #ide what type
+        ide.execute()   #if there is ide we are considerd only about method not which class 
+        n.execute()
+
+ide=pycharm()
+n=MyEditor()
+
+lap1=Laptop()
+lap1.code(ide,n)
+        
+>>> %Run 1.py
+compiling
+running
+hello
+world
+>>> 
