@@ -1,0 +1,183 @@
+since we don't have init methhod in B so only it goes up
+
+class A:
+    
+    def __init__(self):
+        print("in A init")
+    
+    def feature1(self):
+        print("feature 1 working in A")
+        
+    def feature2(self):
+        print("feature 2 working in A")
+
+class B(A):
+    def feature3(self):
+        print("feature 3 working in B")
+        
+    def feature4(self):
+        print("feature 4 working in B")
+
+
+a1=B()
+
+>>> %Run 1.py
+in A init
+>>> 
+/////////////////////////////////////////////////////////
+If you create object of sub class it will forst try find init of sub class
+       if it's not found then it will call init of super class 
+
+
+class A:
+    
+    def __init__(self):
+        print("in A init")
+    
+    def feature1(self):
+        print("feature 1 working in A")
+        
+    def feature2(self):
+        print("feature 2 working in A")
+
+class B(A):
+    
+    def __init__(self):
+        print("in B init")
+    
+    def feature3(self):
+        print("feature 3 working in B")
+        
+    def feature4(self):
+        print("feature 4 working in B")
+
+
+a1=B()
+
+>>> %Run 1.py
+in B init
+>>> 
+//////////////////////////////////////////////////////////////////////////
+to call init of super class we use
+
+super ()
+
+When you create  object of sub class it will call init of sub class first 
+if you have call super then it will first call init of super class thhen call init of sub class
+
+class A:
+    
+    def __init__(self):
+        print("in A init")
+    
+    def feature1(self):
+        print("feature 1 working in A")
+        
+    def feature2(self):
+        print("feature 2 working in A")
+
+class B(A):
+    
+    def __init__(self):
+        super().__init__()
+        print("in B init")
+    
+    def feature3(self):
+        print("feature 3 working in B")
+        
+    def feature4(self):
+        print("feature 4 working in B")
+
+
+a1=B()
+
+>>> %Run 1.py
+in A init
+in B init
+>>> 
+
+class A:
+    
+    def __init__(self):
+        print("in A init")
+    
+    def feature1(self):
+        print("feature 1 working in A")
+        
+    def feature2(self):
+        print("feature 2 working in A")
+
+class B:
+    
+    def __init__(self):
+        print("in B init")
+    
+    def feature3(self):
+        print("feature 3 working in B")
+        
+    def feature4(self):
+        print("feature 4 working in B")
+
+
+class c(A,B):
+    
+    def __init__(self):
+        super().__init__()
+        print("in c init")
+        
+
+
+a1=c()
+
+>>> %Run 1.py
+in A init
+in c init
+>>> 
+ MRO is used when c(a,b) the super __init__ of A will print not B which is not fair for B
+ /////////////////////////////////////////////////////////////////////////
+ To acess the super feature using method function feast
+ 
+ class A:
+    
+    def __init__(self):
+        print("in A init")
+    
+    def feature1(self):
+        print("feature 1 working in A")
+        
+    def feature2(self):
+        print("feature 2 working in A")
+
+class B:
+    
+    def __init__(self):
+        print("in B init")
+    
+    def feature3(self):
+        print("feature 3 working in B")
+        
+    def feature4(self):
+        print("feature 4 working in B")
+
+
+class c(A,B):
+    
+    def __init__(self):
+        pass
+     
+    def feast(self):
+        super().feature2()
+        
+
+
+a1=c()
+a1.feast()
+
+>>> %Run 1.py
+feature 2 working in A
+>>> 
+
+
+
+
+
