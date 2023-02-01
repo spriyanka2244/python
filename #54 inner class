@@ -1,0 +1,86 @@
+inner class
+object of outer class will be in inner class
+
+class student:
+    
+    def __init__(self,name,rollno):
+        self.name=name
+        self.rollno=rollno
+        self.lap=self.Laptop()
+     
+    def show(self):
+        print(self.name,self.rollno)
+
+    class Laptop:  #object of outer class will be inner class
+        
+        def __init__(self):
+            self.brand="HP"
+            self.cpu="i5"
+            self.ram=9
+        
+
+s1=student("Navin",2)
+s2=student("johny",3)
+
+student.show(s1)
+
+lap1=s1.lap
+lap2=s2.lap
+
+lap1.cpu
+
+s1.lap.brand #inner class variable assces
+
+
+>>> %Run 1.py
+Navin 2
+Traceback (most recent call last):
+  File "D:\Users\DELL\Downloads\1.py", line 24, in <module>
+    lap1=s1.lap()
+TypeError: 'Laptop' object is not callable
+>>> 
+
+//////////////////////////////////////////////////////////////////////////////
+
+you can create object of inner class inside the outer class
+
+you can create object of inner class outside the outer class provided you use class name to call it
+
+
+class student:
+    
+    def __init__(self,name,rollno):
+        self.name=name
+        self.rollno=rollno
+        self.lap=self.Laptop()
+     
+    def show(self):
+        print(self.name,self.rollno)
+        self.lap.show()
+       
+    class Laptop:  #object of outer class will be inner class
+        
+        def __init__(self):
+            self.brand="HP"
+            self.cpu="i5"
+            self.ram=9
+            
+        def show(self):
+            print(self.brand,self.cpu,self.ram)
+        
+
+s1=student("Navin",2)
+s2=student("johny",3)
+
+s1.show()
+
+#lap1=student.Laptop()
+
+>>> %Run 1.py
+Navin 2
+HP i5 9
+>>> 
+
+
+
+
