@@ -1,0 +1,198 @@
+single inhertance
+multilevel inhertance
+multiple inhertance
+
+
+single inhertance
+
+class A:
+    def feature1(self):
+        print("feature 1 working in A")
+        
+    def feature2(self):
+        print("feature 2 working in A")
+
+class B(A):
+    def feature3(self):
+        print("feature 3 working in B")
+        
+    def feature4(self):
+        print("feature 4 working in B")
+
+
+b1=B()
+
+b1.feature1()
+b1.feature2()
+b1.feature3()
+b1.feature4()
+
+>>> %Run 1.py
+feature 1 working in A
+feature 2 working in A
+feature 1 working in B
+feature 2 working in B
+>>> 
+////////////////////////////////////////////////
+multi level inhertance
+
+class A:
+    def feature1(self):
+        print("feature 1 working in A")
+        
+    def feature2(self):
+        print("feature 2 working in A")
+
+class B(A):
+    def feature3(self):
+        print("feature 3 working in B")
+        
+    def feature4(self):
+        print("feature 4 working in B")
+
+class c(B):
+    def feature5(self):
+        print("feature 5 working in c")
+        
+    def feature6(self):
+        print("feature 6 working in c")
+
+
+
+c1=c()
+
+c1.feature1()
+c1.feature2()
+c1.feature3()
+c1.feature4()
+c1.feature5()
+c1.feature6()
+
+
+>>> %Run 1.py
+feature 1 working in A
+feature 2 working in A
+feature 3 working in B
+feature 4 working in B
+feature 5 working in c
+feature 6 working in c
+>>> 
+////////////////////////////////////////
+multiple inhertance c(A,B)
+
+class A:
+    def feature1(self):
+        print("feature 1 working in A")
+        
+    def feature2(self):
+        print("feature 2 working in A")
+
+class B:
+    def feature3(self):
+        print("feature 3 working in B")
+        
+    def feature4(self):
+        print("feature 4 working in B")
+
+class c(A,B):
+    def feature5(self):
+        print("feature 5 working in c")
+        
+    def feature6(self):
+        print("feature 6 working in c")
+
+
+
+c1=c()
+
+c1.feature1()
+c1.feature2()
+c1.feature3()
+c1.feature4()
+c1.feature5()
+c1.feature6()
+
+
+class A:
+    def feature1(self):
+        print("feature 1 working in A")
+        
+    def feature2(self):
+        print("feature 2 working in A")
+
+class B:
+    def feature3(self):
+        print("feature 3 working in B")
+        
+    def feature4(self):
+        print("feature 4 working in B")
+
+class c(A,B):
+    def feature5(self):
+        print("feature 5 working in c")
+        
+    def feature6(self):
+        print("feature 6 working in c")
+
+
+
+c1=c()
+
+c1.feature1()
+c1.feature2()
+c1.feature3()
+c1.feature4()
+c1.feature5()
+c1.feature6()
+
+
+
+class A:
+    def feature1(self):
+        print("feature 1 working in A")
+        
+    def feature2(self):
+        print("feature 2 working in A")
+
+class B:
+    def feature3(self):
+        print("feature 3 working in B")
+        
+    def feature4(self):
+        print("feature 4 working in B")
+
+class c(A,B):
+    def feature5(self):
+        print("feature 5 working in c")
+        
+    def feature6(self):
+        print("feature 6 working in c")
+
+
+
+c1=c()
+
+c1.feature1()
+c1.feature2()
+c1.feature3()
+c1.feature4()
+c1.feature5()
+c1.feature6()
+
+
+>>> %Run 1.py
+feature 1 working in A
+feature 2 working in A
+feature 3 working in B
+feature 4 working in B
+feature 5 working in c
+feature 6 working in c
+>>> 
+
+
+
+
+
+
+
+
