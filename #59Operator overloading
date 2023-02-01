@@ -1,0 +1,226 @@
+#This is systatic sugar
+
+#if two variable adding of same  type like int,str
+#magic Methods
+#__add__()
+#__sub__()
+#__mul__()
+
+a=5
+b=4
+c="a"
+d="b"
+print("these add ",a+b)
+print("these add",c+d)
+
+print(int.__add__(a,b))
+
+print(str.__add__(c,d))
+
+>>> %Run 1.py
+these add  9
+these add ab
+9
+ab
+>>> 
+////////////////////////////////////////////////////
+To understand operator overloading
+class student:
+    
+    def __init__(self,m1,m2):
+        self.m1=m1
+        self.m2=m2
+        
+s1=student(23,45)
+s2=student(8,5)
+
+s3=s1+s2
+
+#we can't use + for student and student
+#if we say s1+s2 the python don't know what to do
+        
+    
+>>> %Run 1.py
+Traceback (most recent call last):
+  File "D:\Users\DELL\Downloads\1.py", line 10, in <module>
+    s3=s1+s2
+TypeError: unsupported operand type(s) for +: 'student' and 'student'
+>>> 
+////////////////////////////////////////////////////////////////////////////////
+# if you want to add two string
+#method overloading
+class student:
+    
+    def __init__(self,m1,m2):
+        self.m1=m1
+        self.m2=m2
+    
+    def __add__(self,other): #method overloading
+        m1=self.m1+other.m1
+        m2=self.m2+other.m2
+        s3=student(m1,m2)
+        
+        return s3
+        
+        
+s1=student(23,45) #inside it student.__add__(s1,s2)
+s2=student(8,5)
+
+s3=s1+s2 # + to add method 
+
+print(s3.m1)
+
+        
+  >>> %Run 1.py
+31
+>>> 
+/////////////////////////////////////////////////////////////////////
+"""to perform an operation of user defined using object"""
+class student:
+    
+    def __init__(self,m1,m2):
+        self.m1=m1
+        self.m2=m2
+    
+    def __add__(self,other): #method overloading
+        m1=self.m1+other.m1
+        m2=self.m2+other.m2
+        s3=student(m1,m2)
+        
+        return s3
+    
+    def __gt__(self,other):
+        r1=self.m1 +self.m2
+        r2=other.m1+other.m2
+        if r1>r2:
+            return True
+        else:
+            return False
+        
+        
+        
+s1=student(23,45) #inside it student.__add__(s1,s2)
+s2=student(8,5)
+
+s3=s1+s2 # + to add method 
+
+if s1>s2:
+    print("s1 wins")
+else:
+    print("s2 wins")
+    
+>>> %Run 1.py
+s1 wins
+>>> 
+////////////////////////////////////////////////////////////////////////////////////////
+"""to perform an operation of user defined using object"""
+class student:
+    
+    def __init__(self,m1,m2):
+        self.m1=m1
+        self.m2=m2
+    
+    def __add__(self,other): #method overloading
+        m1=self.m1+other.m1
+        m2=self.m2+other.m2
+        s3=student(m1,m2)
+        
+        return s3
+    
+    def __gt__(self,other):
+        r1=self.m1 +self.m2
+        r2=other.m1+other.m2
+        if r1>r2:
+            return True
+        else:
+            return False
+        
+        
+        
+        
+s1=student(23,45) #inside it student.__add__(s1,s2)
+s2=student(8,5)
+
+s3=s1+s2 # + to add method 
+
+if s1>s2:
+    print("s1 wins")
+else:
+    print("s2 wins")
+    
+a=9
+print(a) #it print value of a
+         #inside a.__str__() a calling
+
+print(s1) #it print address of s1
+print(s3)       
+
+        
+    
+>>> %Run 1.py
+s1 wins
+9
+<__main__.student object at 0x0000023862D6F4F0>
+<__main__.student object at 0x0000023862D6F670>
+>>> 
+
+
+
+
+
+///////////////////////////////////////////////////////////////////////////////////
+"""to perform an operation of user defined using object"""
+class student:
+    
+    def __init__(self,m1,m2):
+        self.m1=m1
+        self.m2=m2
+    
+    def __add__(self,other): #method overloading
+        m1=self.m1+other.m1
+        m2=self.m2+other.m2
+        s3=student(m1,m2)
+        
+        return s3
+    
+    def __gt__(self,other):
+        r1=self.m1 +self.m2
+        r2=other.m1+other.m2
+        if r1>r2:
+            return True
+        else:
+            return False
+        
+    def __str__(self):
+        return '{} {}'.format(self.m1,self.m2)
+        
+        
+        
+s1=student(23,45) #inside it student.__add__(s1,s2)
+s2=student(8,5)
+
+s3=s1+s2 # + to add method 
+
+if s1>s2:
+    print("s1 wins")
+else:
+    print("s2 wins")
+    
+a=9
+print(a) #it print value of a
+         #inside a.__str__() a calling
+
+print(s1.__str__()) #it print address of s1
+print(s3)       
+
+
+>>> %Run 1.py
+s1 wins
+9
+23 45
+31 50
+>>> 
+/////////////////////////////////////////////////////////////////////////////
+
+
+
