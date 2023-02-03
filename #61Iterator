@@ -1,0 +1,223 @@
+nums=[1,2,3,4]
+
+print("index",nums[1])
+
+for i in nums:
+    print(i)
+    
+# it print object of iterator
+it=iter(nums)
+print(it)
+
+
+>>> %Run 1.py
+index 2
+1
+2
+3
+4
+<list_iterator object at 0x000001F2A9A7FA60>
+>>> 
+
+////////////////////////////////////////////////////////////////////
+nums=[1,2,3,4]
+
+it=iter(nums)
+print(it.__next__()) #its gives the first value
+
+
+>>> %Run 1.py
+1
+>>> 
+////////////////////////////////////////////////////////////////////////
+
+nums=[1,2,3,4]
+
+it=iter(nums)
+print(it.__next__())#its gives the first value
+print(it.__next__())
+
+>>> %Run 1.py
+1
+2
+>>> 
+/////////////////////////////////////////////////////////////////////////////
+
+nums=[1,2,3,4]
+
+it=iter(nums)
+print(it.__next__())#its gives the first value
+print(it.__next__())
+
+print(next(it))
+
+>>> %Run 1.py
+1
+2
+3
+>>> 
+//////////////////////////////////////////////////////////////////
+
+#To create own iterator create an own object
+
+class TopTen:
+    
+    def __init__(self):
+        self.num=1
+        
+    def __iter__(self): #the iterator will give thhe value of iterator
+        return self
+    
+     
+    def __next__(self): #the next will give the object of iterator
+        
+        if self.num <=10:
+            val=self.num
+            self.num +=1
+        
+            return val
+        
+        else:
+            raise stopIteration
+        
+    
+values=TopTen()
+
+print(next(values))
+
+for i in values:
+    print(i)
+
+
+>>> %Run 1.py
+1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+Traceback (most recent call last):
+  File "D:\Users\DELL\Downloads\1.py", line 28, in <module>
+    for i in values:
+  File "D:\Users\DELL\Downloads\1.py", line 21, in __next__
+    raise stopIteration
+NameError: name 'stopIteration' is not defined
+>>> 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
