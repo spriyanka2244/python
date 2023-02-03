@@ -1,0 +1,126 @@
+#ABC-Abstract base classes
+
+
+from abc import ABC, abstractmethod
+class computer(ABC):
+    #only to declare a method not define called abstract method
+    @abstractmethod
+    def process(self): 
+        pass
+    
+class Laptop(computer):
+    def process(self):
+        print("Its running")
+        
+        
+
+
+com1=Laptop()
+com1.process()
+
+    
+>>> %Run 1.py
+Its running
+>>> 
+
+#ABC-Abstract base classes
+from abc import ABC, abstractmethod
+class computer(ABC):
+    #only to declare a method not define called abstract method
+    @abstractmethod
+    def process(self): 
+        pass
+    
+class Laptop(computer):
+    def process(self):
+        print("Its running")
+
+class programmer:
+    def work(self):
+        print("solving bugs")
+            
+com1=Laptop()
+prog1=programmer()
+prog1.work()
+
+com1.process()
+
+
+>>> %Run 1.py
+solving bugs
+Its running
+>>> 
+KeyboardInterrupt
+>>> 
+
+#ABC-Abstract base classes
+from abc import ABC, abstractmethod
+class computer(ABC):
+    #only to declare a method not define called abstract method
+    @abstractmethod
+    def process(self): 
+        pass
+    
+class Laptop(computer):
+    def process(self):
+        print("Its running")
+
+class WhiteBoard(computer):
+    def write(self):
+        print("its writing")
+        
+
+class programmer:
+    def work(self,com):
+        print("solving bugs")
+        com.process()
+            
+com1=Laptop()
+com2=WhiteBoard()
+
+prog1=programmer()
+prog1.work(com2)
+
+com1.process()
+
+    
+    
+>>> %Run 1.py
+Traceback (most recent call last):
+  File "D:\Users\DELL\Downloads\1.py", line 24, in <module>
+    com2=WhiteBoard()
+TypeError: Can't instantiate abstract class WhiteBoard with abstract method process
+>>> 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+    
+    
+
