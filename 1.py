@@ -1,0 +1,26 @@
+set1=set()
+set2=set()
+for i in range(5):
+    set1.add(i)
+
+for i in range(3,9):
+    set2.add(i)
+ 
+print("set1:",set1)
+print("set2:",set2)
+    
+#union
+set3=set1.union(set2)
+set4=set1|set2
+print("union using union() function",set4)
+print("union using '|' operator",set3)
+
+#difference
+set3=set1.difference(set2)
+set4=set2-set1
+print("union using() difference function of set1,set2",set3)
+print("union - difference operator set2,set1",set4)
+
+#intersection
+set3=set2&set1
+print("union '&' interscetion operator",set3)
