@@ -1,0 +1,41 @@
+class Node:
+    def __init__(self,a): #single node
+        self.value=a
+        self.next=None
+        
+def insertion_start(head,value): #head refer to startng of node
+    new_node=Node(value)  #refer to class node
+    new_node.next=head
+    return new_node
+    
+def insertion_end(head,value):
+    new_node=Node(value)
+    temp=head
+    while(temp.next!=None): 
+        temp=temp.next
+    temp.next=new_node
+    
+def insertion_middle(head,n,value):
+    new_node=Node(value)
+    temp=head
+    while(n-1>0): 
+        temp=temp.next
+        n=n-1
+    x=temp.next
+    temp.next=new_node
+    new_node.next=x 
+    
+    
+def display(head):
+    temp=head
+    while(temp!=None):
+        print(temp.value)
+        temp=temp.next
+        
+head=Node(5) 
+head=insertion_start(head,10)#startng of node so head
+head=insertion_start(head,2)#startng of node so head
+insertion_end(head,20)#its end of node so no head
+insertion_end(head,30)
+insertion_middle(head,3,100)
+display(head)
