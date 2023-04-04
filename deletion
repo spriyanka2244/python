@@ -1,0 +1,65 @@
+class Node:
+    def __init__(self,a): #single node
+        self.value=a
+        self.next=None
+        
+def insertion_start(head,value): #head refer to startng of node
+    new_node=Node(value)  #refer to class node
+    new_node.next=head
+    return new_node
+    
+def insertion_end(head,value):
+    new_node=Node(value)
+    temp=head
+    while(temp.next!=None): 
+        temp=temp.next
+    temp.next=new_node
+    
+def insertion_middle(head,n,value):
+    new_node=Node(value)
+    temp=head
+    while(n-1>0): 
+        temp=temp.next
+        n=n-1
+    x=temp.next
+    temp.next=new_node
+    new_node.next=x 
+    
+def display(head):
+    temp=head
+    while(temp!=None):
+        print(temp.value)
+        temp=temp.next
+
+#will not work in two case 
+
+def delete_end(head):
+    temp=head
+    #single node present means so use temp.next!=None
+    while(temp.next!=None and temp.next.next!=None):
+        temp=temp.next
+#    temp.next=temp.next.next   
+    temp.next=None
+    
+def delete_middle(head,n):
+    temp=head
+    while(n-2!=0):
+        temp=temp.next
+    temp.next=temp.next.next #your refer to next to next node
+        
+        
+        
+head=Node(5) 
+head=insertion_start(head,10)#startng of node so head
+head=insertion_start(head,0)#startng of node so head
+insertion_end(head,20)#its end of node so no head
+insertion_end(head,30)
+insertion_middle(head,3,100)
+head=head.next #delete at first
+head=head.next #delete at first
+delete_end(head)
+delete_end(head)
+insertion_end(head,20)#its end of node so no head
+insertion_end(head,30)
+delete_middle(head,2)
+display(head)
