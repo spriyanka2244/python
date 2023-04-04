@@ -38,6 +38,7 @@ def delete_end(head):
     #single node present means so use temp.next!=None
     while(temp.next!=None and temp.next.next!=None):
         temp=temp.next
+        n=n-1
 #    temp.next=temp.next.next   
     temp.next=None
     
