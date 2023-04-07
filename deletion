@@ -33,6 +33,9 @@ def display(head):
 
 #will not work in two case 
 
+def delete_start(head):
+    head=head.next
+
 def delete_end(head):
     temp=head
     #single node present means so use temp.next!=None
